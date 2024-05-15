@@ -8,7 +8,9 @@
                right: 50px;
                z-index: 9999;
         height: 200px;
-        width: auto;
+        width: 500px;
+      display: flex;
+      flex-direction: row;
              background: rgba(255,255,255,0.5);
              backdrop-filter: blur(3px);
              border: 2px solid #d1d1d1;
@@ -378,7 +380,9 @@ a {
      transform: scale(1.025);
    }
 
-   .dropdown {
+  
+  
+  .dropdown {
   position: relative;
   display: inline-block;
 }
@@ -430,15 +434,17 @@ a {
 }
 
 .timetable-container {
-position: fixed;
-display: none;
-height: 500px;
-z-index: 6942069;
+  z-index: 9999999999999;
   border-radius: 2rem;
   border: 2px solid #d1d1d1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.35));
 padding: 20px;
-  max-width: 696.5px;
+  min-width: 696.5px;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -448,6 +454,7 @@ padding: 20px;
   transition: all 0.1s ease-in-out;
     color: white;
   font-family: monospace;
+  min-height: 500px;
 }
 
 .timetable {
@@ -461,13 +468,13 @@ padding: 20px;
   box-shadow: 0 0 5px white;
 }
 
-#table2 {
+#table2, #table2-6, #table2-1, #table2-2, #table2-3, #table2-4 {
   display: none;
     color: #d1d1d1;
   font-family: monospace;
 }
 
-#table1 {
+#table1, #table1-6, #table1-1, #table1-2, #table1-3, #table1-4 {
   display: block;
 }
 .horizontal-scroll-timetable {
@@ -479,7 +486,6 @@ padding: 20px;
 
 
 .timetable-container:hover {
-  transform: scale(1.0005);
   box-shadow: 0 0 100px rgba(255,255,255,0.75);
   border: 2px solid white;
   background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.5));
@@ -514,6 +520,10 @@ th, td {
   background-color: #3e8ca1;
   }
 
+
+body {
+  background: black;
+}
 
 
 
@@ -564,6 +574,11 @@ th, td {
     color: white;
   }
 }
+  
+  .wand-extra {
+    display: flex;
+    flex-direction: row;
+  }
 
    
    h1:hover {
@@ -726,6 +741,10 @@ th, td {
    text-align: center;
    position: relative;
    }
+  
+  .eight-one, .eight-two, .eight-three, .eight-four, .eight-five, .eight-six {
+    scale: 0.75;
+  }
 
    #update {
    position: absolute;
@@ -803,6 +822,14 @@ scale: 2;
     font-weight: 500;
     transition: all 0.3s ease-in-out forwards;
 }
+  
+  wand {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+  }
 
 .shop-item:hover {
   background-color: white;
@@ -816,78 +843,8 @@ scale: 2;
 color: green;
 }
 
-       .clockity {
-      position: absolute;
-      margin-bottom: 25px;
-      margin-left: 25px;
-      bottom: 0;
-      left: 0;
-           z-index: 99;
-    }
-
-    .clock {
-      width: 200px;
-      height: 200px;
-      border: 10px solid #b30000; /* Red border */
-      border-radius: 50%;
-      position: relative;
-      background-color: #4d0000; /* Darker red clock face */
-    }
-
-    .hour, .minute, .second {
-      background: #b30000; /* Red hands */
-      position: absolute;
-      transform-origin: center bottom;
-    }
-
-    .hour {
-      width: 6px;
-      height: 50px;
-      top: 50px;
-      left: 97px;
-    }
-
-    .minute {
-      width: 4px;
-      height: 70px;
-      top: 30px;
-      left: 98px;
-    }
-
-    .second {
-      width: 2px;
-      height: 80px;
-      top: 20px;
-      left: 99px;
-    }
-
-    .number {
-      position: absolute;
-      font-size: 16px;
-      font-weight: bold;
-      transform-origin: center;
-      color: #b30000; /* Red numbers */
-    }
+       
      </style>
-<div class="clockity">
-  <div class="clock">
-    <div class="hour" id="hour"></div>
-    <div class="minute" id="minute"></div>
-    <div class="second" id="second"></div>
-     <div class="number" style="transform: translate(96px, 20px)">12</div>
-    <div class="number" style="transform: translate(176px, 100px)">3</div>
-    <div class="number" style="transform: translate(96px, 180px)">6</div>
-    <div class="number" style="transform: translate(16px, 100px)">9</div>
-    <div class="number" style="transform: translate(140px, 26px)">1</div>
-    <div class="number" style="transform: translate(164px, 52px)">2</div>
-    <div class="number" style="transform: translate(164px, 148px)">4</div>
-    <div class="number" style="transform: translate(140px, 174px)">5</div>
-    <div class="number" style="transform: translate(52px, 174px)">7</div>
-    <div class="number" style="transform: translate(26px, 148px)">8</div>
-    <div class="number" style="transform: translate(26px, 52px)">10</div>
-    <div class="number" style="transform: translate(52px, 26px)">11</div>
-  </div>
-  </div>
 
 <div class="container">
   <h1>Brungle Shop</h1>
@@ -895,9 +852,9 @@ color: green;
   <p>Brungle Points: <span id="brunglePoints">1000</span></p>
   <p>Bought Items: <span id="boughtItems">0</span></p>
   <div id="shopItems">
-    <button class="shop-item" data-price="500" onclick="buyItem(5)">Shyun Pen - 500 Points</button>
-    <button class="shop-item" data-price="1000" onclick="buyItem(1000)">Food - 1000 Points</button>
-    <button class="shop-item" data-price="2000" onclick="buyItem(2000)">100 Robux - 2000 Points</button>
+    <button class="shop-item" data-price="500" onclick="buyItem(500)">Shyun Pen - 500 Points</button>
+    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">Food - 1000 Points</button>
+    <button class="shop-item" data-price="5000" onclick="buyItem(5000)">100 Robux - 2000 Points</button>
   </div>
 </div>
 
@@ -989,6 +946,7 @@ color: green;
 
    <body>
        <div id="theme-changer">
+         <wand class="wand-extra">
            <div class="color-circle" style="background-color: #E63946" onclick="changeColor('#E63946')"></div>
            <div class="color-circle" style="background-color: #fc8c03" onclick="changeColor('#fc8c03')"></div>
            <div class="color-circle" style="background-color: #036b52" onclick="changeColor('#036b52')"></div>
@@ -996,18 +954,22 @@ color: green;
            <button onclick="showCustomColor()">+</button>
            <input type="text" id="custom-color" placeholder="Enter hex code ( start with #)">
            <button onclick="addCustomColor()">Add</button>
-           <button id="change-bg-btn">Change BG Image</button>
+           <button id="change-bg-btn">BG Img</button>
+         </wand>
+         
            <br>
            <hr>
            <br>
+         <wand>
            <h1 style="font-size: 10px;"> Themes: </h1>
            <div class="color-circle" style="background-image: url('https://wallpapercave.com/wp/wp10532946.jpg')" onclick="themeSpace()"></div>
+         </wand>
            <br>
            <hr>
            <br>
-           <hr>
-           <br>
+         <wand>
            <h1 style="font-size: 10px;"> Your Colors:</h1>
+           </wand>
            <br>
        </div>
          
@@ -1039,29 +1001,29 @@ color: green;
 
 
 
-   <Div class="timetable-container" style="display: none;">
- <button class="toggle-button"onclick="toggleTables()">Toggle Tables</button>
+<Div class="timetable-container" style="display: none;">
   <div class="dropdown">
   <button class="dropbtn">Select Class</button>
-
   <div class="dropdown-content">
     <ul>
-       <li><a href="#">8.1</a></li>
-      <li><a href="#">8.2</a></li>
-      <li><a href="#">8.3</a></li>
-      <li><a href="#">8.4</a></li>
-      <li><a href="#">8.5</a></li>
-      <li><a href="#">8.6</a></li>
+       <li><a onclick="eightOneChange()">8.1</a></li>
+      <li><a onclick="eightTwoChange()">8.2</a></li>
+      <li><a onclick="eightThreeChange()">8.3</a></li>
+      <li><a onclick="eightFourChange()">8.4</a></li>
+      <li><a onclick="eightFiveChange()">8.5</a></li>
+      <li><a onclick="eightSixChange()">8.6</a></li>
+      <li><a onclick="createTimetable()">Custom</a></li>
     </ul>
   </div>
 </div>
-
-<h1> Class:  8.5  </h1>
-<br>
+<section class="eight-five" style="display: none">
+  <button class="toggle-button"onclick="toggleEightFive()">Toggle Tables</button>
+  <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.5 </h1> 
   <div  id="table1">
-    <br>
     <h1> Week 1 </h1>
-    <br>
+    <b>
   <table class="timetable">
     <tr>
       <th>Period</th>
@@ -1116,11 +1078,8 @@ color: green;
     
 
   <div  id="table2">
-        <br>
-
+    <br>
     <h1 style="color: white"> Week 2 </h1>
-        <br>
-
       <table class="timetable">
     <tr>
       <th>Period</th>
@@ -1171,8 +1130,594 @@ color: green;
         <td>Maths</td>
     </tr>
   </table>
-
   </div>
+  </section>
+  <section class="eight-six" style="display: none">
+    <button class="toggle-button"onclick="toggleEightSix()">Toggle Tables</button>
+    <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.6 
+  <div  id="table1-6">
+    <br>
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>Geography</td>
+        <td>German</td>
+        <td>PSHE</td>
+        <td>Geography</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Food Science</td>
+        <td>History</td>
+        <td>Music</td>
+        <td>English</td>
+        <td>Geography</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>History</td>
+        <td>Computer Science</td>
+        <td>Drama</td>
+        <td>PRE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Spanish</td>
+        <td>Chemistry</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>Dance</td>
+    </tr>
+  </table>
+  </div>
+    
+
+  <div  id="table2-6">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>DT</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>Biology</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>Drama</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td>German</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>English</td>
+        <td>History</td>
+        <td>PRE</td>
+        <td>Spanish</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>Biology</td>
+        <td>Maths</td>
+        <td>Art</td>
+        <td>English</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>Music</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
+  </div>
+  </section>
+    <section class="eight-three" style="display: none">
+  <button class="toggle-button"onclick="toggleEightThree()">Toggle Tables</button>
+  <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.3 </h1> 
+  <div  id="table1-3">
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>PRE</td>
+        <td>Dance</td>
+        <td>PSHE</td>
+        <td>English</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>History</td>
+        <td>Geography</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>Spanish</td>
+        <td>Spanish</td>
+        <td>History</td>
+        <td>Music</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Art</td>
+        <td>Biology</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Drama</td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>English</td>
+    </tr>
+  </table>
+  </div>
+    
+
+  <div  id="table2-3">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Geography</td>
+        <td>Drama</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>PRE</td>
+        <td>Physics</td>
+        <td>Biology</td>
+        <td>Music</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>DT / Food Tech</td>
+        <td>Food Tech / DT</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>Geography</td>
+        <td>History</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
+  </div>
+  </section>
+  <section class="eight-four" style="display: none">
+    <button class="toggle-button"onclick="toggleEightFour()">Toggle Tables</button>
+    <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.4 
+  <div  id="table1-4">
+    <br>
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>Geography</td>
+        <td>German</td>
+        <td>PSHE</td>
+        <td>Geography</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Food Science</td>
+        <td>History</td>
+        <td>Music</td>
+        <td>English</td>
+        <td>Geography</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>History</td>
+        <td>Computer Science</td>
+        <td>Drama</td>
+        <td>PRE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Spanish</td>
+        <td>Chemistry</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>Dance</td>
+    </tr>
+  </table>
+  </div>
+    
+
+  <div  id="table2-4">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>DT</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>Biology</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>Drama</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td>German</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>English</td>
+        <td>History</td>
+        <td>PRE</td>
+        <td>Spanish</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>Biology</td>
+        <td>Maths</td>
+        <td>Art</td>
+        <td>English</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>Music</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
+  </div>
+  </section>
+    <section class="eight-one" style="display: none">
+  <button class="toggle-button"onclick="toggleEightOne()">Toggle Tables</button>
+  <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.1 </h1> 
+  <div  id="table1-1">
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>PRE</td>
+        <td>Dance</td>
+        <td>PSHE</td>
+        <td>English</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>History</td>
+        <td>Geography</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>Spanish</td>
+        <td>Spanish</td>
+        <td>History</td>
+        <td>Music</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Art</td>
+        <td>Biology</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Drama</td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>English</td>
+    </tr>
+  </table>
+  </div>
+    
+
+  <div  id="table2-1">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>English</td>
+        <td>Chemistry</td>
+        <td>Geography</td>
+        <td>Drama</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>PRE</td>
+        <td>Physics</td>
+        <td>Biology</td>
+        <td>Music</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>German</td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>DT / Food Tech</td>
+        <td>Food Tech / DT</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>Geography</td>
+        <td>History</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
+  </div>
+  </section>
+  <section class="eight-two" style="display: none">
+    <button class="toggle-button"onclick="toggleEightTwo()">Toggle Tables</button>
+    <br>
+    <br>
+  <h1 style="font-size: 1.5rem; font-weight: 1000;"> 8.3 </h1> 
+    
+  <div  id="table1-6">
+    <br>
+    <h1> Week 1 </h1>
+    <b>
+  <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>Geography</td>
+        <td>German</td>
+        <td>PSHE</td>
+        <td>Geography</td>
+        <td>PE</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Maths</td>
+        <td>Maths</td>
+        <td>English</td>
+        <td>Art</td>
+        <td>Physics</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Food Science</td>
+        <td>History</td>
+        <td>Music</td>
+        <td>English</td>
+        <td>Geography</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>History</td>
+        <td>Computer Science</td>
+        <td>Drama</td>
+        <td>PRE</td>
+        <td>English</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Spanish</td>
+        <td>Chemistry</td>
+        <td>Maths</td>
+        <td>Games</td>
+        <td>Dance</td>
+    </tr>
+  </table>
+  </div>
+    
+
+  <div  id="table2-6">
+    <br>
+    <h1 style="color: white"> Week 2 </h1>
+      <table class="timetable">
+    <tr>
+      <th>Period</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+      <tr>
+        <td><b>1</b></td>
+        <td>English</td>
+        <td>DT</td>
+        <td>Maths</td>
+        <td>PE</td>
+        <td>Biology</td>
+    </tr>
+    <tr>
+      <td> 2 </td>
+        <td>Spanish</td>
+        <td>Drama</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td>German</td>
+    </tr>
+    <tr>
+      <td> 3 </td>
+        <td>Dance</td>
+        <td>English</td>
+        <td>History</td>
+        <td>PRE</td>
+        <td>Spanish</td>
+    </tr>
+    <tr>
+      <td> 4 </td>
+        <td>Biology</td>
+        <td>Maths</td>
+        <td>Art</td>
+        <td>English</td>
+        <td>Computer Science</td>
+    </tr>
+    <tr>
+      <td> 5 </td>
+        <td>Maths</td>
+        <td>German</td>
+        <td>Music</td>
+        <td>Games</td>
+        <td>Maths</td>
+    </tr>
+  </table>
+  </div>
+    </section>
+  </div>
+    
    
      
    
@@ -1245,7 +1790,7 @@ document.addEventListener('DOMContentLoaded', function() {
  });
  
 function changeColor(color) {
-    document.body.style.backgroundColor = color;
+   setCookie('currentBG', color, 365); document.body.style.backgroundColor = color;
 }
 
 function showCustomColor() {
@@ -1254,45 +1799,45 @@ function showCustomColor() {
 }
 
 function addCustomColor() {
-    var customColorInput = document.getElementById('custom-color');
-    var customColor = customColorInput.value;
-    if (/^#[0-9A-F]{6}$/i.test(customColor)) {
-        var colorCircle = document.createElement('div');
-        colorCircle.className = 'color-circle';
-        colorCircle.style.backgroundColor = customColor;
-        colorCircle.addEventListener('click', function() {
-            changeColor(customColor);
-        });
-        var addButton = document.getElementById('add-button');
-        document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
-        customColorInput.value = '';
-        customColorInput.style.display = 'none';
+  var customColorInput = document.getElementById('custom-color');
+  var customColor = customColorInput.value;
+  if (/^#[0-9A-F]{6}$/i.test(customColor)) {
+      var colorCircle = document.createElement('div');
+      colorCircle.className = 'color-circle';
+      colorCircle.style.backgroundColor = customColor;
+      colorCircle.addEventListener('click', function() {
+          changeColor(customColor);
+      });
+      var addButton = document.getElementById('add-button');
+      document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+      customColorInput.value = '';
+      customColorInput.style.display = 'none';
 
-        // Retrieve existing colors array from local storage or initialize an empty array
-        var colors = JSON.parse(localStorage.getItem('customColors')) || [];
-        // Push the new color into the array
-        colors.push(customColor);
-        // Save the updated colors array to local storage
-        localStorage.setItem('customColors', JSON.stringify(colors));
-    } else {
-        alert('Please enter a valid hex color code.');
-    }
+      // Retrieve existing colors array from local storage or initialize an empty array
+      var colors = JSON.parse(localStorage.getItem('customColors')) || [];
+      // Push the new color into the array
+      colors.push(customColor);
+      // Save the updated colors array to local storage
+      localStorage.setItem('customColors', JSON.stringify(colors));
+  } else {
+      alert('Please enter a valid hex color code.');
+  }
 }
 
 window.onload = function() {
-    var storedColors = JSON.parse(localStorage.getItem('customColors'));
-    if (storedColors && storedColors.length > 0) {
-        storedColors.forEach(function(color) {
-            var colorCircle = document.createElement('div');
-            colorCircle.className = 'color-circle';
-            colorCircle.style.backgroundColor = color;
-            colorCircle.addEventListener('click', function() {
-                changeColor(color);
-            });
-            var addButton = document.getElementById('add-button');
-            document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
-        });
-    }
+  var storedColors = JSON.parse(localStorage.getItem('customColors'));
+  if (storedColors && storedColors.length > 0) {
+      storedColors.forEach(function(color) {
+          var colorCircle = document.createElement('div');
+          colorCircle.className = 'color-circle';
+          colorCircle.style.backgroundColor = color;
+          colorCircle.addEventListener('click', function() {
+              changeColor(color);
+          });
+          var addButton = document.getElementById('add-button');
+          document.getElementById('theme-changer').insertBefore(colorCircle, addButton);
+      });
+  }
 };
 
 
@@ -1950,6 +2495,186 @@ updateClock();
     document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp10532946.jpg')";
     document.body.style.backgroundSize = "100vw auto"; // Set background width to 100vw
   }
+     
+     //toggles to next
+function toggleEightOne() {
+      var table1 = document.getElementById('table1-1');
+      var table2 = document.getElementById('table2-1');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightTwo() {
+      var table1 = document.getElementById('table1-2');
+      var table2 = document.getElementById('table2-2');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightThree() {
+      var table1 = document.getElementById('table1-3');
+      var table2 = document.getElementById('table2-3');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightFour() {
+      var table1 = document.getElementById('table1-4');
+      var table2 = document.getElementById('table2-4');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightFive() {
+      var table1 = document.getElementById('table1');
+      var table2 = document.getElementById('table2');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+function toggleEightSix() {
+      var table1 = document.getElementById('table1-6');
+      var table2 = document.getElementById('table2-6');
+
+      if (table1.style.display === 'block') {
+        table1.style.display = 'none';
+        table2.style.display = 'block';
+      } else {
+        table1.style.display = 'block';
+        table2.style.display = 'none';
+      }
+    }
+
+
+//Changing to different classes
+
+
+const eightOne = document.querySelector('.eight-one');
+const eightTwo = document.querySelector('.eight-two');
+const eightThree = document.querySelector('.eight-three');
+const eightFour = document.querySelector('.eight-four');
+const eightFive = document.querySelector('.eight-five');
+const eightSix = document.querySelector('.eight-six');
+
+function eightOneChange() {
+  eightOne.style.display = "block";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "none";
+  eightFour.style.display = "none";
+  eightFive.style.display = "none";
+  eightSix.style.display = "none";
+}
+
+function eightTwoChange() {
+  eightOne.style.display = "none";
+  eightTwo.style.display = "block";
+  eightThree.style.display = "none";
+  eightFour.style.display = "none";
+  eightFive.style.display = "none";
+  eightSix.style.display = "none";
+}
+
+function eightThreeChange() {
+  eightOne.style.display = "none";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "block";
+  eightFour.style.display = "none";
+  eightFive.style.display = "none";
+  eightSix.style.display = "none";
+}
+
+function eightFourChange() {
+  eightOne.style.display = "none";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "none";
+  eightFour.style.display = "block";
+  eightFive.style.display = "none";
+  eightSix.style.display = "none";
+}
+
+function eightFiveChange() {
+  eightOne.style.display = "none";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "none";
+  eightFour.style.display = "none";
+  eightFive.style.display = "block";
+  eightSix.style.display = "none";
+}
+
+function eightSixChange() {
+   eightOne.style.display = "none";
+  eightTwo.style.display = "none";
+  eightThree.style.display = "none";
+  eightFour.style.display = "none";
+  eightFive.style.display = "none";
+  eightSix.style.display = "block";
+}
+
+function createTimetable() {
+  alert('Not Implemented YET!')
+}
+     
+     function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+//I'd remove this and replace with sleep() but you can use this synchronously so learn how to async first
+function wait(milliseconds, callback) {
+  setTimeout(callback, milliseconds);
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+      }
+  }
+  return "";
+}
        
 
     </script>
